@@ -34,7 +34,6 @@ func _process(delta):
 	if in_frame:
 		match current_order_status:
 			ORDER_STATUS.MADE:
-				print(wait_time)
 				wait_time -= delta # Countdown
 				progress_bar.value = wait_time # Update bar
 				
