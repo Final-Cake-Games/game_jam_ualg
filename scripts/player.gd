@@ -32,10 +32,12 @@ func _physics_process(delta):
 	if Input.is_action_just_released("throw_1"):
 		throw_bola("screme")
 		curr_throw = 0
+		progress_bar.visible = false
 		
 	if Input.is_action_just_released("throw_2"):
 		throw_bola("creme")
 		curr_throw = 0
+		progress_bar.visible = false
 	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -48,7 +50,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func charge_throw(delta):
-	#show ui charge
+	progress_bar.visible = true
 	progress_bar.value = curr_throw
 	if curr_throw < max_throw_str:
 		curr_throw += throw_adder * delta
