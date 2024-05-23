@@ -1,30 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3t0tha7ecr3r"]
+[gd_scene load_steps=3 format=3 uid="uid://d3t0tha7ecr3r"]
 
 [ext_resource type="Script" path="res://scripts/map_square.gd" id="1_7r5aj"]
-
-[sub_resource type="Gradient" id="Gradient_m1sgn"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.854961, 0.808308, 0.340212, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_cxna2"]
-gradient = SubResource("Gradient_m1sgn")
-width = 360
+[ext_resource type="Texture2D" uid="uid://28l0ovsp6xwm" path="res://tmp/0000.png" id="2_qw5qe"]
 
 [node name="MapSquare" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_7r5aj")
 
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Positions"]
+position = Vector2(-188, -152)
+
+[node name="Marker2D2" type="Marker2D" parent="Positions"]
+position = Vector2(-118, -406)
+
+[node name="Marker2D3" type="Marker2D" parent="Positions"]
+position = Vector2(122, -518)
+
+[node name="Marker2D4" type="Marker2D" parent="Positions"]
+position = Vector2(-150, -674)
+
+[node name="Marker2D5" type="Marker2D" parent="Positions"]
+position = Vector2(160, -768)
+
+[node name="Marker2D6" type="Marker2D" parent="Positions"]
+position = Vector2(-194, -888)
+
+[node name="Marker2D7" type="Marker2D" parent="Positions"]
+position = Vector2(172, -872)
+
+[node name="Marker2D8" type="Marker2D" parent="Positions"]
+position = Vector2(160, -204)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -320)
-scale = Vector2(1, 640)
-texture = SubResource("GradientTexture1D_cxna2")
+position = Vector2(0, -480)
+texture = ExtResource("2_qw5qe")
 
 [node name="ScreenStatusNotifier" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-170, -630)
-rect = Rect2(-10, -10, 360, 10)
+position = Vector2(-260, -950)
+rect = Rect2(-10, -10, 540, 50)
 
 [node name="NewChunkPos" type="Marker2D" parent="."]
-position = Vector2(0, -640)
+position = Vector2(0, -960)
 
 [connection signal="screen_entered" from="ScreenStatusNotifier" to="." method="_on_screen_status_notifier_screen_entered"]
 [connection signal="screen_exited" from="ScreenStatusNotifier" to="." method="_on_screen_status_notifier_screen_exited"]
