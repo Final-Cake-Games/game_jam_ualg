@@ -8,14 +8,15 @@ position = Vector2(0, -8)
 script = ExtResource("1_7r5aj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -480)
 texture = ExtResource("2_qw5qe")
 
 [node name="ScreenStatusNotifier" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-260, -470)
+position = Vector2(-260, -950)
 rect = Rect2(-10, -10, 540, 50)
 
 [node name="NewChunkPos" type="Marker2D" parent="."]
-position = Vector2(0, -480)
+position = Vector2(0, -960)
 
 [connection signal="screen_entered" from="ScreenStatusNotifier" to="." method="_on_screen_status_notifier_screen_entered"]
 [connection signal="screen_exited" from="ScreenStatusNotifier" to="." method="_on_screen_status_notifier_screen_exited"]

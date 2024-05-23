@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cibj33qcip4as"]
+
+[ext_resource type="Script" path="res://scripts/bola_berlim.gd" id="1_m6035"]
+[ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_yrt1d"]
+
+[node name="BolaBerlim" type="RigidBody2D"]
+z_index = 2
+gravity_scale = 0.0
+script = ExtResource("1_m6035")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.592792, 0.521521, 0.171002, 1)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_yrt1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
