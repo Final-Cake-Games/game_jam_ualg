@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bridrvflasth4"]
+
+[ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_4k7ap"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_bvcr7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mr0qw"]
+radius = 69.0072
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+motion_mode = 1
+script = ExtResource("1_bvcr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4k7ap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mr0qw")
