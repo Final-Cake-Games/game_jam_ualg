@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://t14x0p6pjpni"]
+[gd_scene load_steps=28 format=3 uid="uid://t14x0p6pjpni"]
 
 [ext_resource type="Script" path="res://scripts/costumer.gd" id="1_bx6k8"]
 [ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_vvwgl"]
@@ -17,16 +17,54 @@
 [ext_resource type="Texture2D" uid="uid://c4h6xilqtxxwa" path="res://assets/caras_turma/tiago.png" id="12_jloyf"]
 [ext_resource type="Texture2D" uid="uid://b5ka5pxo5ruu5" path="res://assets/caras_turma/Tomas.png" id="13_ywjv6"]
 [ext_resource type="Texture2D" uid="uid://dtew17hn7y08n" path="res://assets/caras_turma/Vitor.png" id="14_nj05e"]
+[ext_resource type="Texture2D" uid="uid://bt0abx1tf6iox" path="res://tmp/F.1.png" id="15_iyd4e"]
+[ext_resource type="Texture2D" uid="uid://b6qcjwkpvoh81" path="res://tmp/F.2.png" id="16_flwlt"]
+[ext_resource type="Texture2D" uid="uid://ogtxff5k21lf" path="res://tmp/F.3.png" id="17_owvxk"]
 [ext_resource type="Texture2D" uid="uid://d2cknaebj20j2" path="res://tmp/waiting-png-9.png" id="18_qy06c"]
+[ext_resource type="Texture2D" uid="uid://djuuv0f4i3cyp" path="res://tmp/F.4.png" id="18_tffvq"]
+[ext_resource type="Texture2D" uid="uid://dvp5ddutic7g5" path="res://tmp/F.5.png" id="19_v3njm"]
+[ext_resource type="Texture2D" uid="uid://byqk8vcxqlrce" path="res://tmp/Bubble_Happy_L.png" id="21_wyrgf"]
+[ext_resource type="Texture2D" uid="uid://gscv0ahxgsxr" path="res://tmp/Bubble_Angry_L.png" id="22_826d8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oooxp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_iyd4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_flwlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_owvxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tffvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v3njm")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_rr6sa")
 }],
 "loop": false,
 "name": &"creme",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_wyrgf")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_826d8")
+}],
+"loop": true,
+"name": &"mad",
 "speed": 5.0
 }, {
 "frames": [{
@@ -39,6 +77,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_flwlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_owvxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tffvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v3njm")
+}, {
+"duration": 1.0,
 "texture": ExtResource("3_odtbe")
 }],
 "loop": false,
@@ -47,7 +100,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo1xv"]
-size = Vector2(64, 64)
+size = Vector2(124, 112)
 
 [node name="Costumer" type="Area2D"]
 z_index = 3
@@ -58,10 +111,11 @@ script = ExtResource("1_bx6k8")
 turma_textures = Array[CompressedTexture2D]([ExtResource("2_psnfk"), ExtResource("3_8uryl"), ExtResource("4_cfm3g"), ExtResource("5_6s1c8"), ExtResource("6_gvlcs"), ExtResource("7_smff1"), ExtResource("8_v5r27"), ExtResource("9_iiig7"), ExtResource("10_f5woe"), ExtResource("11_xdnij"), ExtResource("12_jloyf"), ExtResource("13_ywjv6"), ExtResource("14_nj05e")])
 
 [node name="RequestBubble" type="AnimatedSprite2D" parent="."]
+z_index = 10
 position = Vector2(38, -63)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_oooxp")
-animation = &"new_animation"
+animation = &"happy"
 autoplay = "new_animation"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -75,7 +129,7 @@ shape = SubResource("RectangleShape2D_wo1xv")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 self_modulate = Color(0.0786705, 0.581014, 0.893529, 1)
-z_index = 3
+z_index = 10
 offset_left = -45.0
 offset_top = 57.0
 offset_right = 49.0

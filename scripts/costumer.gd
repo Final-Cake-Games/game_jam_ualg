@@ -17,6 +17,7 @@ var wait_time : float
 
 var current_order_status : int
 var in_frame : bool = false
+var signaled : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,7 +38,12 @@ func _process(delta):
 				wait_time -= delta # Countdown
 				progress_bar.value = wait_time # Update bar
 				
-				if wait_time <= 0: current_order_status = ORDER_STATUS.FAILED_TIME
+				if wait_time <= 0: 
+					current_order_status = ORDER_STATUS.FAILED_TIME
+					if signaled == false:
+						request_bubble.play("mad")
+						progress_bar.visible = false
+						signaled = true
 			ORDER_STATUS.FULFILLED:
 				#print("YAY! Happy costumer")
 				pass
@@ -49,17 +55,10 @@ func _process(delta):
 				pass
 			ORDER_STATUS.NO_ORDER:
 				pass
-	#if order_started and !order_done:
-		#if max_order_time > 0:
-			#max_order_time -= delta
-			#progress_bar.value = max_order_time
-		#else:
-			#print("order failed on time")
-			##order failed
+
 		
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	# Costumer entered screen, ready to play!
-	print("IN SCREEN")
 	if order_choice != '':
 		in_frame = true
 		progress_bar.visible = true
@@ -73,8 +72,13 @@ func _on_body_entered(body : BolaBerlim):
 	if current_order_status == ORDER_STATUS.MADE:
 		if body.type == order_choice:
 			current_order_status = ORDER_STATUS.FULFILLED
+			request_bubble.play("happy")
+			progress_bar.visible = false
+			
 		else:
 			current_order_status = ORDER_STATUS.FAILED_TYPE
+			request_bubble.play("mad")
+			progress_bar.visible = false
 		
 	body.queue_free()
 
