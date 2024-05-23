@@ -8,6 +8,9 @@ var current_speed : float
 
 
 func _physics_process(delta):
+	look_at(get_global_mouse_position())
+	
+	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if input_direction:
@@ -17,3 +20,4 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, decel)
 	
 	move_and_slide()
+	
