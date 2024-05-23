@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bridrvflasth4"]
+[gd_scene load_steps=13 format=3 uid="uid://bridrvflasth4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bvcr7"]
 [ext_resource type="Texture2D" uid="uid://c6crt4binn8vf" path="res://assets/persona_principa/loop.png" id="2_wly4t"]
+[ext_resource type="Texture2D" uid="uid://ldgaxquedfu4" path="res://tmp/flex_bicep.png" id="3_n54ja"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoy7b"]
 atlas = ExtResource("2_wly4t")
@@ -75,17 +76,24 @@ rotation = 1.13446
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_hrb0u")
 autoplay = "default"
-frame_progress = 0.360372
+frame_progress = 0.0618608
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8, -13)
 shape = SubResource("CapsuleShape2D_dp6mq")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color(2.74345e-06, 0.88605, 0.161962, 1)
-offset_left = -80.0
+visible = false
+self_modulate = Color(0.0156863, 1, 0, 1)
+offset_left = 95.0
 offset_top = -59.0
-offset_right = 37.0
+offset_right = 183.0
 offset_bottom = -41.0
 rotation = 1.5708
 show_percentage = false
+
+[node name="FlexBicep" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(106, 16.9996)
+rotation = -3.14159
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("3_n54ja")
