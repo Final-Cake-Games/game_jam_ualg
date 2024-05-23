@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cibj33qcip4as"]
+[gd_scene load_steps=4 format=3 uid="uid://cibj33qcip4as"]
 
 [ext_resource type="Script" path="res://scripts/bola_berlim.gd" id="1_m6035"]
 [ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_yrt1d"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wlmr"]
+radius = 6.08276
+
 [node name="BolaBerlim" type="RigidBody2D"]
 z_index = 2
+collision_layer = 4
+collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_m6035")
 
@@ -15,3 +20,8 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_yrt1d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8wlmr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
