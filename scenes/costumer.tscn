@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://t14x0p6pjpni"]
+[gd_scene load_steps=29 format=3 uid="uid://t14x0p6pjpni"]
 
 [ext_resource type="Script" path="res://scripts/costumer.gd" id="1_bx6k8"]
 [ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_vvwgl"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dvp5ddutic7g5" path="res://tmp/F.5.png" id="19_v3njm"]
 [ext_resource type="Texture2D" uid="uid://byqk8vcxqlrce" path="res://tmp/Bubble_Happy_L.png" id="21_wyrgf"]
 [ext_resource type="Texture2D" uid="uid://gscv0ahxgsxr" path="res://tmp/Bubble_Angry_L.png" id="22_826d8"]
+[ext_resource type="Texture2D" uid="uid://bmy8o7uwytxxb" path="res://assets/chapeus_turma/chapeu_teste.png" id="25_3wnt3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oooxp"]
 animations = [{
@@ -120,6 +121,12 @@ autoplay = "new_animation"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vvwgl")
+region_rect = Rect2(0, 33.2108, 128, 94.7892)
+
+[node name="ChapeuTeste" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -59)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("25_3wnt3")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, -83)
