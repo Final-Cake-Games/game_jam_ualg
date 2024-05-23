@@ -4,7 +4,9 @@ enum ORDER_STATUS { MADE, FULFILLED, FAILED_TIME, FAILED_TYPE, NO_ORDER }
 
 @onready var request_bubble : AnimatedSprite2D = $RequestBubble
 @onready var progress_bar : ProgressBar = $ProgressBar
+@onready var sprite_2d : Sprite2D = $Sprite2D
 
+@export var turma_textures : Array[CompressedTexture2D]
 @export var min_wait_time : int = 3
 @export var max_wait_time : int = 6
 
@@ -21,6 +23,7 @@ func _ready():
 	wait_time = randi_range(min_wait_time, max_wait_time)
 	progress_bar.max_value = wait_time
 	order_choice = order_options.pick_random()
+	sprite_2d.texture = turma_textures.pick_random()
 	
 	if order_choice == "": progress_bar.visible = false
 

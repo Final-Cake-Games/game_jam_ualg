@@ -1,9 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://t14x0p6pjpni"]
+[gd_scene load_steps=20 format=3 uid="uid://t14x0p6pjpni"]
 
 [ext_resource type="Script" path="res://scripts/costumer.gd" id="1_bx6k8"]
 [ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_vvwgl"]
+[ext_resource type="Texture2D" uid="uid://cojjkv4xm4225" path="res://assets/caras_turma/alex.png" id="2_psnfk"]
 [ext_resource type="Texture2D" uid="uid://bhiimb7j4yrb" path="res://tmp/Berlim C_Creme_L.png" id="2_rr6sa"]
+[ext_resource type="Texture2D" uid="uid://btdupcgshmv8t" path="res://assets/caras_turma/Ana.png" id="3_8uryl"]
 [ext_resource type="Texture2D" uid="uid://bkxx54t7fq8qy" path="res://tmp/Berlim S_Creme_L.png" id="3_odtbe"]
+[ext_resource type="Texture2D" uid="uid://ba6c4uic2qt0i" path="res://assets/caras_turma/flavio.png" id="4_cfm3g"]
+[ext_resource type="Texture2D" uid="uid://bfadu4naf0y3o" path="res://assets/caras_turma/Gomez.png" id="5_6s1c8"]
+[ext_resource type="Texture2D" uid="uid://cp08fcxtogsm0" path="res://assets/caras_turma/Joao_Farroba.png" id="6_gvlcs"]
+[ext_resource type="Texture2D" uid="uid://bk2lxitb7ga2x" path="res://assets/caras_turma/oGay.png" id="7_smff1"]
+[ext_resource type="Texture2D" uid="uid://c6b081ls55fym" path="res://assets/caras_turma/prog_jaques.png" id="8_v5r27"]
+[ext_resource type="Texture2D" uid="uid://cb8uaexv782v8" path="res://assets/caras_turma/Ricardo.png" id="9_iiig7"]
+[ext_resource type="Texture2D" uid="uid://dnilpyonb1kkc" path="res://assets/caras_turma/Ricardo_2.png" id="10_f5woe"]
+[ext_resource type="Texture2D" uid="uid://8l4h0n7h3pb0" path="res://assets/caras_turma/Ruben.png" id="11_xdnij"]
+[ext_resource type="Texture2D" uid="uid://c4h6xilqtxxwa" path="res://assets/caras_turma/tiago.png" id="12_jloyf"]
+[ext_resource type="Texture2D" uid="uid://b5ka5pxo5ruu5" path="res://assets/caras_turma/Tomas.png" id="13_ywjv6"]
+[ext_resource type="Texture2D" uid="uid://dtew17hn7y08n" path="res://assets/caras_turma/Vitor.png" id="14_nj05e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oooxp"]
 animations = [{
@@ -40,6 +53,7 @@ z_index = 3
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_bx6k8")
+turma_textures = Array[CompressedTexture2D]([ExtResource("2_psnfk"), ExtResource("3_8uryl"), ExtResource("4_cfm3g"), ExtResource("5_6s1c8"), ExtResource("6_gvlcs"), ExtResource("7_smff1"), ExtResource("8_v5r27"), ExtResource("9_iiig7"), ExtResource("10_f5woe"), ExtResource("11_xdnij"), ExtResource("12_jloyf"), ExtResource("13_ywjv6"), ExtResource("14_nj05e")])
 
 [node name="RequestBubble" type="AnimatedSprite2D" parent="."]
 position = Vector2(38, -63)
