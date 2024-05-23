@@ -1,10 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://bridrvflasth4"]
+[gd_scene load_steps=12 format=3 uid="uid://bridrvflasth4"]
 
-[ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_4k7ap"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bvcr7"]
+[ext_resource type="Texture2D" uid="uid://c6crt4binn8vf" path="res://assets/persona_principa/loop.png" id="2_wly4t"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mr0qw"]
-radius = 18.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoy7b"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63bul"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55vr0"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0m3q"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d810k"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(4096, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmc1k"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(5120, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi7pm"]
+atlas = ExtResource("2_wly4t")
+region = Rect2(6144, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrb0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoy7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63bul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55vr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0m3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d810k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmc1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi7pm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp6mq"]
+radius = 50.0
+height = 158.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
@@ -12,19 +70,22 @@ collision_mask = 10
 motion_mode = 1
 script = ExtResource("1_bvcr7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_4k7ap")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.13446
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_hrb0u")
+autoplay = "default"
+frame_progress = 0.360372
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mr0qw")
+position = Vector2(-8, -13)
+shape = SubResource("CapsuleShape2D_dp6mq")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(2.74345e-06, 0.88605, 0.161962, 1)
-offset_left = -21.0
-offset_top = -28.0
-offset_right = 35.0
-offset_bottom = -20.0
+offset_left = -80.0
+offset_top = -59.0
+offset_right = 37.0
+offset_bottom = -41.0
 rotation = 1.5708
 show_percentage = false
