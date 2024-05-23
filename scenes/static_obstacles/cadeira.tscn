@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp035jiehb3xy"]
+
+[ext_resource type="PackedScene" uid="uid://bwyne6uskl8fx" path="res://scenes/base_scenes/static_obstacle.tscn" id="1_b18x2"]
+[ext_resource type="Texture2D" uid="uid://bx30yct5cllft" path="res://assets/praia_assets/chair_02.png" id="2_2r1vn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uec60"]
+radius = 25.0
+height = 86.0
+
+[node name="Cadeira" instance=ExtResource("1_b18x2")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2r1vn")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_uec60")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://eu0grpop7pr7"]
+
+[ext_resource type="PackedScene" uid="uid://bwyne6uskl8fx" path="res://scenes/base_scenes/static_obstacle.tscn" id="1_2btvh"]
+[ext_resource type="Texture2D" uid="uid://cgwrxsjinr05o" path="res://assets/praia_assets/toy_bucket_01.png" id="2_0tmaw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obrsa"]
+radius = 15.5242
+
+[node name="Bucket" instance=ExtResource("1_2btvh")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("2_0tmaw")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_obrsa")

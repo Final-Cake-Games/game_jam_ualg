@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwyne6uskl8fx"]
+
+[ext_resource type="Script" path="res://scripts/base_scripts/static_obstacle.gd" id="1_40mee"]
+
+[node name="StaticObstacle" type="StaticBody2D"]
+z_index = 5
+collision_layer = 8
+script = ExtResource("1_40mee")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
