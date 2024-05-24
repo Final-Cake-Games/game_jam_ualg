@@ -15,7 +15,7 @@ enum ORDER_STATUS { MADE, FULFILLED, FAILED_TIME, FAILED_TYPE, NO_ORDER }
 
 @export var eat_sfx : AudioStream
 
-var order_options : Array[String] = ['creme', 'screme', '']
+var order_options : Array[String] = ['creme', 'screme', '', 'creme', 'screme', 'creme', 'screme']
 
 var order_choice : String
 var wait_time : float

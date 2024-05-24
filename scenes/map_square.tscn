@@ -12,7 +12,7 @@
 [node name="MapSquare" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_7r5aj")
-beach_things_array = Array[PackedScene]([ExtResource("3_k1olp"), ExtResource("4_b7vsi"), ExtResource("4_b0lt6"), ExtResource("5_46xo5"), ExtResource("6_rg0w1"), ExtResource("7_22c6o")])
+beach_things_array = Array[PackedScene]([ExtResource("3_k1olp"), ExtResource("4_b7vsi"), ExtResource("4_b0lt6"), ExtResource("5_46xo5"), ExtResource("6_rg0w1"), ExtResource("7_22c6o"), ExtResource("3_k1olp"), ExtResource("3_k1olp"), ExtResource("3_k1olp")])
 
 [node name="Positions" type="Node2D" parent="."]
 
