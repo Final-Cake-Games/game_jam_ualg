@@ -1,4 +1,7 @@
-extends Area2D
+class_name Costumer extends Area2D
+
+signal order_success
+signal order_failed
 
 enum ORDER_STATUS { MADE, FULFILLED, FAILED_TIME, FAILED_TYPE, NO_ORDER }
 
@@ -42,6 +45,7 @@ func _process(delta):
 					if signaled == false:
 						request_bubble.play("mad")
 						progress_bar.visible = false
+						order_failed.emit()
 						signaled = true
 			ORDER_STATUS.FULFILLED:
 				#print("YAY! Happy costumer")
@@ -73,11 +77,13 @@ func _on_body_entered(body : BolaBerlim):
 			current_order_status = ORDER_STATUS.FULFILLED
 			request_bubble.play("happy")
 			progress_bar.visible = false
+			order_success.emit()
 			
 		else:
 			current_order_status = ORDER_STATUS.FAILED_TYPE
 			request_bubble.play("mad")
 			progress_bar.visible = false
+			order_failed.emit()
 		
 	body.queue_free()
 

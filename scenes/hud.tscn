@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c43jsqurnr2ea"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_e07t1"]
+[ext_resource type="Texture2D" uid="uid://crisvprswjtgv" path="res://tmp/free-mouse-icon-3.png" id="2_yhky4"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_e07t1")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PONTOS: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Pontos" type="Label" parent="."]
+offset_left = 76.0
+offset_right = 116.0
+offset_bottom = 23.0
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Free-mouse-icon-3" type="Sprite2D" parent="."]
+position = Vector2(465, 882)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_yhky4")

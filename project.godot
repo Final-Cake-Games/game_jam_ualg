@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=540
 window/size/viewport_height=960
+mouse_cursor/custom_image="res://tmp/aim.png"
 
 [input]
 
