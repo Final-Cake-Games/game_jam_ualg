@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8hrdf7hv6wyh"]
+
+[ext_resource type="Script" path="res://scripts/base_scripts/beach_thing.gd" id="1_pri0b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnr0p"]
+bounce = 0.2
+
+[node name="BeachThing" type="RigidBody2D"]
+z_index = 5
+collision_layer = 8
+collision_mask = 13
+physics_material_override = SubResource("PhysicsMaterial_cnr0p")
+gravity_scale = 0.0
+script = ExtResource("1_pri0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

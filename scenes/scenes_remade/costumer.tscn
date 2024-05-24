@@ -1,0 +1,164 @@
+[gd_scene load_steps=30 format=3 uid="uid://dltbv1mvyk08f"]
+
+[ext_resource type="PackedScene" uid="uid://8hrdf7hv6wyh" path="res://scenes/base_scenes/beach_thing.tscn" id="1_4hv5f"]
+[ext_resource type="Script" path="res://scripts/scripts_remade/costumer.gd" id="2_xy4ne"]
+[ext_resource type="Texture2D" uid="uid://cojjkv4xm4225" path="res://assets/caras_turma/alex.png" id="3_a1ynh"]
+[ext_resource type="Texture2D" uid="uid://bt0abx1tf6iox" path="res://tmp/F.1.png" id="3_bva8b"]
+[ext_resource type="Texture2D" uid="uid://b6qcjwkpvoh81" path="res://tmp/F.2.png" id="4_1knmb"]
+[ext_resource type="Texture2D" uid="uid://btdupcgshmv8t" path="res://assets/caras_turma/Ana.png" id="4_fh31d"]
+[ext_resource type="Texture2D" uid="uid://ogtxff5k21lf" path="res://tmp/F.3.png" id="5_21xkx"]
+[ext_resource type="Texture2D" uid="uid://ba6c4uic2qt0i" path="res://assets/caras_turma/flavio.png" id="5_oho7k"]
+[ext_resource type="Texture2D" uid="uid://djuuv0f4i3cyp" path="res://tmp/F.4.png" id="6_5r7xv"]
+[ext_resource type="Texture2D" uid="uid://cp08fcxtogsm0" path="res://assets/caras_turma/Joao_Farroba.png" id="6_xeoml"]
+[ext_resource type="Texture2D" uid="uid://dvp5ddutic7g5" path="res://tmp/F.5.png" id="7_3nshm"]
+[ext_resource type="Texture2D" uid="uid://bfadu4naf0y3o" path="res://assets/caras_turma/Gomez.png" id="7_6kdhm"]
+[ext_resource type="Texture2D" uid="uid://bk2lxitb7ga2x" path="res://assets/caras_turma/oGay.png" id="8_gnjfr"]
+[ext_resource type="Texture2D" uid="uid://bhiimb7j4yrb" path="res://tmp/Berlim C_Creme_L.png" id="8_yd47i"]
+[ext_resource type="Texture2D" uid="uid://c6b081ls55fym" path="res://assets/caras_turma/prog_jaques.png" id="9_3i53o"]
+[ext_resource type="Texture2D" uid="uid://byqk8vcxqlrce" path="res://tmp/Bubble_Happy_L.png" id="9_sh0db"]
+[ext_resource type="Texture2D" uid="uid://gscv0ahxgsxr" path="res://tmp/Bubble_Angry_L.png" id="10_53kae"]
+[ext_resource type="Texture2D" uid="uid://cb8uaexv782v8" path="res://assets/caras_turma/Ricardo.png" id="10_g7jas"]
+[ext_resource type="Texture2D" uid="uid://bkxx54t7fq8qy" path="res://tmp/Berlim S_Creme_L.png" id="11_8s0xp"]
+[ext_resource type="Texture2D" uid="uid://dnilpyonb1kkc" path="res://assets/caras_turma/Ricardo_2.png" id="11_n4et0"]
+[ext_resource type="Texture2D" uid="uid://bmy8o7uwytxxb" path="res://assets/chapeus_turma/chapeu_teste.png" id="12_16fsq"]
+[ext_resource type="Texture2D" uid="uid://8l4h0n7h3pb0" path="res://assets/caras_turma/Ruben.png" id="12_inx5m"]
+[ext_resource type="Texture2D" uid="uid://d2cknaebj20j2" path="res://tmp/waiting-png-9.png" id="13_d210i"]
+[ext_resource type="Texture2D" uid="uid://c4h6xilqtxxwa" path="res://assets/caras_turma/tiago.png" id="13_q7uw7"]
+[ext_resource type="Texture2D" uid="uid://b5ka5pxo5ruu5" path="res://assets/caras_turma/Tomas.png" id="14_hwnai"]
+[ext_resource type="Texture2D" uid="uid://dtew17hn7y08n" path="res://assets/caras_turma/Vitor.png" id="15_5icj3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyl68"]
+radius = 57.1402
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua2tr"]
+size = Vector2(122, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76ehv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bva8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1knmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_21xkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5r7xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3nshm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yd47i")
+}],
+"loop": false,
+"name": &"creme",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sh0db")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_53kae")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1knmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_21xkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5r7xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3nshm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8s0xp")
+}],
+"loop": false,
+"name": &"screme",
+"speed": 5.0
+}]
+
+[node name="Costumer" instance=ExtResource("1_4hv5f")]
+collision_mask = 29
+lock_rotation = true
+linear_damp = 50.0
+script = ExtResource("2_xy4ne")
+turma_textures = Array[CompressedTexture2D]([ExtResource("3_a1ynh"), ExtResource("4_fh31d"), ExtResource("5_oho7k"), ExtResource("6_xeoml"), ExtResource("7_6kdhm"), ExtResource("8_gnjfr"), ExtResource("9_3i53o"), ExtResource("10_g7jas"), ExtResource("11_n4et0"), ExtResource("12_inx5m"), ExtResource("13_q7uw7"), ExtResource("14_hwnai"), ExtResource("15_5icj3")])
+min_wait_time = 3
+max_wait_time = 6
+eat_sfx = null
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_wyl68")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(0, -83)
+
+[node name="BerlimDetector" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BerlimDetector" index="0"]
+shape = SubResource("RectangleShape2D_ua2tr")
+
+[node name="RequestBubble" type="AnimatedSprite2D" parent="." index="4"]
+z_index = 10
+position = Vector2(38, -63)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_76ehv")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="ChapeuTeste" type="Sprite2D" parent="." index="5"]
+position = Vector2(-7.62939e-06, -59)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_16fsq")
+
+[node name="ProgressBar" type="ProgressBar" parent="." index="6"]
+self_modulate = Color(0.0786705, 0.581014, 0.893529, 1)
+z_index = 10
+offset_left = -45.0
+offset_top = 57.0
+offset_right = 49.0
+offset_bottom = 76.0
+show_percentage = false
+
+[node name="Waiting-png-9" type="Sprite2D" parent="ProgressBar" index="0"]
+position = Vector2(-9, 10)
+scale = Vector2(0.0410156, 0.0371094)
+texture = ExtResource("13_d210i")
+
+[connection signal="no_order" from="." to="." method="_on_no_order"]
+[connection signal="order_failed" from="." to="." method="_on_order_failed"]
+[connection signal="order_made" from="." to="." method="_on_order_made"]
+[connection signal="order_success" from="." to="." method="_on_order_success"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="body_entered" from="BerlimDetector" to="." method="_on_berlim_detector_body_entered"]

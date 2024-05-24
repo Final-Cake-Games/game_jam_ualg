@@ -1,6 +1,7 @@
 class_name BolaBerlim extends RigidBody2D
 
 var type : String
+var str : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -23,7 +23,6 @@ func _physics_process(delta):
 	move_camera(delta)
 	camera_move_speed = move_toward(camera_move_speed, cam_max_speed, ((cam_max_speed - cam_speed_start) / time_to_max_seconds) * delta)
 	
-	print(camera_move_speed)
 	
 func move_camera(delta : float) -> void:
 	camera_2d.position.y -= camera_move_speed * delta

@@ -71,6 +71,7 @@ func throw_bola( type : String):
 		new_bola.type = type
 		bolas_holder.add_child(new_bola)
 		var direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
+		new_bola.str = curr_throw
 		new_bola.apply_impulse(direction * curr_throw)
 	
 func _on_slowed():

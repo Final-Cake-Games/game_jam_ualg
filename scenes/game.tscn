@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmar6qisp2br0"]
+[gd_scene load_steps=8 format=3 uid="uid://bmar6qisp2br0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_gljfi"]
 [ext_resource type="PackedScene" uid="uid://d3t0tha7ecr3r" path="res://scenes/map_square.tscn" id="2_j5ln5"]
 [ext_resource type="PackedScene" uid="uid://bridrvflasth4" path="res://scenes/player.tscn" id="3_8b7rk"]
 [ext_resource type="PackedScene" uid="uid://c43jsqurnr2ea" path="res://scenes/hud.tscn" id="4_e7lcb"]
+[ext_resource type="PackedScene" uid="uid://dltbv1mvyk08f" path="res://scenes/scenes_remade/costumer.tscn" id="5_g7w5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cut0w"]
 size = Vector2(800, 114.5)
@@ -34,6 +35,7 @@ shape = SubResource("RectangleShape2D_cut0w")
 [node name="Boundries" type="StaticBody2D" parent="Camera2D"]
 position = Vector2(-342, -67)
 collision_layer = 16
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Boundries"]
 position = Vector2(-12, -138.5)
@@ -51,5 +53,8 @@ shape = SubResource("RectangleShape2D_2tfs3")
 position = Vector2(0, 55)
 
 [node name="Hud" parent="." instance=ExtResource("4_e7lcb")]
+
+[node name="Costumer" parent="." instance=ExtResource("5_g7w5u")]
+position = Vector2(-138, -152)
 
 [connection signal="body_entered" from="Camera2D/PlayerDeath" to="." method="_on_player_block_body_entered"]
