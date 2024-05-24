@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://t14x0p6pjpni"]
+[gd_scene load_steps=31 format=3 uid="uid://t14x0p6pjpni"]
 
 [ext_resource type="Script" path="res://scripts/costumer.gd" id="1_bx6k8"]
 [ext_resource type="Texture2D" uid="uid://ln0jsmkrefn7" path="res://icon.svg" id="1_vvwgl"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c4h6xilqtxxwa" path="res://assets/caras_turma/tiago.png" id="12_jloyf"]
 [ext_resource type="Texture2D" uid="uid://b5ka5pxo5ruu5" path="res://assets/caras_turma/Tomas.png" id="13_ywjv6"]
 [ext_resource type="Texture2D" uid="uid://dtew17hn7y08n" path="res://assets/caras_turma/Vitor.png" id="14_nj05e"]
+[ext_resource type="AudioStream" uid="uid://bqxxudj065kof" path="res://tmp/chomp.mp3" id="15_fb4k4"]
 [ext_resource type="Texture2D" uid="uid://bt0abx1tf6iox" path="res://tmp/F.1.png" id="15_iyd4e"]
 [ext_resource type="Texture2D" uid="uid://b6qcjwkpvoh81" path="res://tmp/F.2.png" id="16_flwlt"]
 [ext_resource type="Texture2D" uid="uid://ogtxff5k21lf" path="res://tmp/F.3.png" id="17_owvxk"]
@@ -113,6 +114,7 @@ collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_bx6k8")
 turma_textures = Array[CompressedTexture2D]([ExtResource("2_psnfk"), ExtResource("3_8uryl"), ExtResource("4_cfm3g"), ExtResource("5_6s1c8"), ExtResource("6_gvlcs"), ExtResource("7_smff1"), ExtResource("8_v5r27"), ExtResource("9_iiig7"), ExtResource("10_f5woe"), ExtResource("11_xdnij"), ExtResource("12_jloyf"), ExtResource("13_ywjv6"), ExtResource("14_nj05e")])
+eat_sfx = ExtResource("15_fb4k4")
 
 [node name="RequestBubble" type="AnimatedSprite2D" parent="."]
 z_index = 10

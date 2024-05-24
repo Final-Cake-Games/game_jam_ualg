@@ -13,6 +13,8 @@ enum ORDER_STATUS { MADE, FULFILLED, FAILED_TIME, FAILED_TYPE, NO_ORDER }
 @export var min_wait_time : int = 3
 @export var max_wait_time : int = 6
 
+@export var eat_sfx : AudioStream
+
 var order_options : Array[String] = ['creme', 'screme', '']
 
 var order_choice : String
@@ -72,6 +74,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 		current_order_status = ORDER_STATUS.NO_ORDER
 
 func _on_body_entered(body : BolaBerlim):
+	SfxManager.play_sfx(eat_sfx, self, 0)
 	if current_order_status == ORDER_STATUS.MADE:
 		if body.type == order_choice:
 			current_order_status = ORDER_STATUS.FULFILLED
