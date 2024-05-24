@@ -1,10 +1,14 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
+
+signal slowed
 
 @onready var progress_bar : ProgressBar = $ProgressBar
 
 @export var max_speed : float = 200
 @export var accel : float = 50
 @export var decel : float = 10
+@export var punish_speed : float = 100
+@export var punish_time : float = 3
 @export var throw_adder : float = 500
 
 @export var max_throw_str : float = 1200
@@ -21,6 +25,10 @@ func _ready():
 	bolas_holder = get_tree().get_first_node_in_group("bolas")
 
 func _physics_process(delta):
+	if (get_last_slide_collision() != null and 
+	!get_last_slide_collision().get_collider().name.begins_with("Boun")):
+		slowed.emit()
+		
 	mouse_pos = get_global_mouse_position()
 	look_at(mouse_pos.move_toward(get_global_mouse_position(), 5)) # Make smooth
 	#lerp()
@@ -65,3 +73,8 @@ func throw_bola( type : String):
 		var direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
 		new_bola.apply_impulse(direction * curr_throw)
 	
+func _on_slowed():
+	var store_speed = max_speed
+	max_speed = punish_speed
+	await get_tree().create_timer(punish_time).timeout
+	max_speed = 200

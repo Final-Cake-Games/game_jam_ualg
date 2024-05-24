@@ -14,10 +14,15 @@ config/name="game_jam_ualg"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SfxManager="*res://sfx_manager.gd"
+
 [display]
 
 window/size/viewport_width=540
 window/size/viewport_height=960
+mouse_cursor/custom_image="res://tmp/aim.png"
 
 [input]
 
@@ -58,3 +63,4 @@ throw_2={
 2d_physics/layer_2="back_barrier"
 2d_physics/layer_3="bolas_berlim"
 2d_physics/layer_4="static_obstacles"
+2d_physics/layer_5="boundries"

@@ -9,13 +9,14 @@ class_name MapSquare extends Node2D
 
 var positions_array : Array
 var chunk_holder : Node
-
+var game_node : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	game_node = get_parent().get_parent()
 	positions_array = positions.get_children()
 	chunk_holder = get_tree().get_first_node_in_group("chunks")
-	load_random_sprite()
+	#load_random_sprite()
 	
 	for position in positions_array:
 		var beach_thing = beach_things_array.pick_random().instantiate()
@@ -23,10 +24,10 @@ func _ready():
 		beach_thing.position.y += randf_range(-5 , 5)
 		position.add_child(beach_thing)
 		
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+		if beach_thing is Costumer:
+			beach_thing.order_success.connect(add_point_trigger)
+			beach_thing.order_failed.connect(retract_point_trigger)
+		
 
 func _on_screen_status_notifier_screen_exited():
 	# On screen exit delete chunk
@@ -39,18 +40,10 @@ func _on_screen_status_notifier_screen_entered():
 		new_chunk.global_position = new_chunk_pos.global_position # Place chunk in appropriate pos
 		chunk_holder.add_child(new_chunk) # Place chunk in world
 
-#func get_files(path):
-	#var files = []
-	#var dir = DirAccess.new()
-	#dir.open(path)
-	#dir.list_dir_begin(true)
-#
-	#var file = dir.get_next()
-	#while file != '':
-		#files += [file]
-		#file = dir.get_next()
-#
-	#return files
-
 func load_random_sprite():
 	pass
+
+func add_point_trigger():
+	game_node.add_point()
+func retract_point_trigger():
+	game_node.remove_point()

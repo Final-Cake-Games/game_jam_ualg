@@ -1,4 +1,7 @@
-extends Area2D
+class_name Costumer extends Area2D
+
+signal order_success
+signal order_failed
 
 enum ORDER_STATUS { MADE, FULFILLED, FAILED_TIME, FAILED_TYPE, NO_ORDER }
 
@@ -10,7 +13,9 @@ enum ORDER_STATUS { MADE, FULFILLED, FAILED_TIME, FAILED_TYPE, NO_ORDER }
 @export var min_wait_time : int = 3
 @export var max_wait_time : int = 6
 
-var order_options : Array[String] = ['creme', 'screme', '']
+@export var eat_sfx : AudioStream
+
+var order_options : Array[String] = ['creme', 'screme', '', 'creme', 'screme', 'creme', 'screme']
 
 var order_choice : String
 var wait_time : float
@@ -34,7 +39,6 @@ func _process(delta):
 	if in_frame:
 		match current_order_status:
 			ORDER_STATUS.MADE:
-				print(wait_time)
 				wait_time -= delta # Countdown
 				progress_bar.value = wait_time # Update bar
 				
@@ -43,6 +47,7 @@ func _process(delta):
 					if signaled == false:
 						request_bubble.play("mad")
 						progress_bar.visible = false
+						order_failed.emit()
 						signaled = true
 			ORDER_STATUS.FULFILLED:
 				#print("YAY! Happy costumer")
@@ -69,16 +74,19 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 		current_order_status = ORDER_STATUS.NO_ORDER
 
 func _on_body_entered(body : BolaBerlim):
+	SfxManager.play_sfx(eat_sfx, self, 0)
 	if current_order_status == ORDER_STATUS.MADE:
 		if body.type == order_choice:
 			current_order_status = ORDER_STATUS.FULFILLED
 			request_bubble.play("happy")
 			progress_bar.visible = false
+			order_success.emit()
 			
 		else:
 			current_order_status = ORDER_STATUS.FAILED_TYPE
 			request_bubble.play("mad")
 			progress_bar.visible = false
+			order_failed.emit()
 		
 	body.queue_free()
 
