@@ -25,7 +25,8 @@ func _ready():
 	bolas_holder = get_tree().get_first_node_in_group("bolas")
 
 func _physics_process(delta):
-	if (get_last_slide_collision() != null):
+	if (get_last_slide_collision() != null and 
+	!get_last_slide_collision().get_collider().name.begins_with("Boun")):
 		slowed.emit()
 		
 	mouse_pos = get_global_mouse_position()
