@@ -5,7 +5,6 @@ signal slowed
 @onready var progress_bar : ProgressBar = $ProgressBar
 @onready var sprite_2d : AnimatedSprite2D = $Sprite2D
 
-
 @export var max_speed : float = 200
 @export var accel : float = 50
 @export var decel : float = 10
@@ -22,17 +21,15 @@ var curr_throw : float = 0
 var current_speed : float
 var mouse_pos : Vector2
 
+
 func _ready():
 	progress_bar.max_value = max_throw_str
 	bolas_holder = get_tree().get_first_node_in_group("bolas")
+	
 
 func _physics_process(delta):
 	if (get_last_slide_collision() != null):
-		var last_collision = get_last_slide_collision()
-		var last_collision_name : String = last_collision.get_collider().name
-		
-		if !last_collision_name.begins_with("Boun"):
-			slowed.emit()
+		slowed.emit()
 		
 	mouse_pos = get_global_mouse_position()
 	look_at(mouse_pos.move_toward(get_global_mouse_position(), 5)) # Make smooth
@@ -91,9 +88,3 @@ func _on_slowed():
 	max_speed = punish_speed
 	await get_tree().create_timer(punish_time).timeout
 	max_speed = 200
-
-func boost():
-	pass
-	#velocity.y = 0
-	#velocity.y -= 1000
-	#move_and_slide()

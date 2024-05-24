@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://b5ka5pxo5ruu5" path="res://assets/caras_turma/Tomas.png" id="14_hwnai"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyl68"]
-radius = 57.1402
+radius = 31.0644
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ua2tr"]
-size = Vector2(122, 124)
+size = Vector2(74, 78)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_76ehv"]
 animations = [{

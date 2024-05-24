@@ -67,9 +67,7 @@ func _on_berlim_detector_body_entered(body : BolaBerlim):
 	if waiting_for_order:
 		if body.type == order_choice:
 			order_success.emit()
-			
 			var player : Player = get_tree().get_first_node_in_group("player")
-			player.boost()
 		else:
 			order_failed.emit()
 

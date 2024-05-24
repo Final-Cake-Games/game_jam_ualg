@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmar6qisp2br0"]
+[gd_scene load_steps=8 format=3 uid="uid://bmar6qisp2br0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_gljfi"]
 [ext_resource type="PackedScene" uid="uid://d3t0tha7ecr3r" path="res://scenes/map_square.tscn" id="2_j5ln5"]
 [ext_resource type="PackedScene" uid="uid://bridrvflasth4" path="res://scenes/player.tscn" id="3_8b7rk"]
 [ext_resource type="PackedScene" uid="uid://c43jsqurnr2ea" path="res://scenes/hud.tscn" id="4_e7lcb"]
+[ext_resource type="Texture2D" uid="uid://yeaad47ik0et" path="res://tmp/Sand_Title.png" id="5_dvgax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cut0w"]
 size = Vector2(800, 114.5)
@@ -26,6 +27,7 @@ blend_mode = 2
 position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 638)
 
 [node name="PlayerDeath" type="Area2D" parent="Camera2D"]
 z_index = 2
@@ -53,9 +55,19 @@ collision_layer = 16
 position = Vector2(-12, -162.5)
 shape = SubResource("RectangleShape2D_2tfs3")
 
+[node name="LeftEar" type="Node2D" parent="Camera2D" groups=["left_ear"]]
+position = Vector2(-1160, -255)
+
+[node name="RightEar" type="Node2D" parent="Camera2D" groups=["right_ear"]]
+position = Vector2(1346, -244)
+
 [node name="Player" parent="." instance=ExtResource("3_8b7rk")]
-position = Vector2(0, 55)
+position = Vector2(0, 764)
 
 [node name="Hud" parent="." instance=ExtResource("4_e7lcb")]
+
+[node name="SandTitle" type="Sprite2D" parent="."]
+position = Vector2(0, 480)
+texture = ExtResource("5_dvgax")
 
 [connection signal="body_entered" from="Camera2D/PlayerDeath" to="." method="_on_player_block_body_entered"]

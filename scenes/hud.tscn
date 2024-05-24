@@ -1,25 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://c43jsqurnr2ea"]
+[gd_scene load_steps=16 format=3 uid="uid://c43jsqurnr2ea"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_e07t1"]
-[ext_resource type="Texture2D" uid="uid://crisvprswjtgv" path="res://tmp/free-mouse-icon-3.png" id="2_yhky4"]
+[ext_resource type="FontFile" uid="uid://8215b166ckgb" path="res://assets/fonts/Sunflower.otf" id="2_7nwkt"]
+[ext_resource type="Texture2D" uid="uid://djbcn5cqacpn3" path="res://tmp/FramesAgua/Frame1.png" id="3_b6wmg"]
+[ext_resource type="Texture2D" uid="uid://4shou4716ogk" path="res://tmp/FramesAgua2/Frame1.png" id="4_s106w"]
+[ext_resource type="Texture2D" uid="uid://jbkd20tr4ilo" path="res://tmp/FramesAgua2/Frame2.png" id="5_37c6o"]
+[ext_resource type="Texture2D" uid="uid://cjvmombdafef" path="res://tmp/FramesAgua2/Frame3.png" id="6_614q4"]
+[ext_resource type="Texture2D" uid="uid://bueci7y3nbdul" path="res://tmp/FramesAgua2/Frame4.png" id="7_pgbpr"]
+[ext_resource type="Texture2D" uid="uid://cmkwyapp5lwah" path="res://tmp/FramesAgua2/Frame5.png" id="8_fn52w"]
+[ext_resource type="Texture2D" uid="uid://4u18vb6er88l" path="res://tmp/FramesAgua2/Frame6.png" id="9_p1srx"]
+[ext_resource type="Texture2D" uid="uid://bhiimb7j4yrb" path="res://tmp/Berlim C_Creme_L.png" id="9_vl0m7"]
+[ext_resource type="Texture2D" uid="uid://dlppt1452dn44" path="res://tmp/FramesAgua2/Rato.png" id="11_0rsd4"]
+[ext_resource type="Texture2D" uid="uid://divk33qh7213n" path="res://tmp/Berlim S_Creme_R.png" id="12_p0xb5"]
+
+[sub_resource type="Animation" id="Animation_0i0y7"]
+resource_name = "default"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_s106w"), ExtResource("5_37c6o"), ExtResource("6_614q4"), ExtResource("7_pgbpr"), ExtResource("8_fn52w"), ExtResource("9_p1srx")]
+}
+
+[sub_resource type="Animation" id="Animation_v65yv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_b6wmg")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pi0sn"]
+_data = {
+"RESET": SubResource("Animation_v65yv"),
+"default": SubResource("Animation_0i0y7")
+}
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_e07t1")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "PONTOS: "
-metadata/_edit_use_anchors_ = true
-
 [node name="Pontos" type="Label" parent="."]
-offset_left = 76.0
-offset_right = 116.0
-offset_bottom = 23.0
-text = "0"
+z_index = 32
+anchors_preset = -1
+anchor_left = -0.138889
+anchor_bottom = 0.053125
+offset_left = 266.0
+offset_top = 858.0
+offset_right = 306.0
+offset_bottom = 881.0
+theme_override_fonts/font = ExtResource("2_7nwkt")
+theme_override_font_sizes/font_size = 18
+text = "0
+"
 metadata/_edit_use_anchors_ = true
 
-[node name="Free-mouse-icon-3" type="Sprite2D" parent="."]
-position = Vector2(465, 882)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_yhky4")
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+position = Vector2(270, 488)
+texture = ExtResource("3_b6wmg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pi0sn")
+}
+autoplay = "default"
+
+[node name="BerlimCCremeL" type="Sprite2D" parent="."]
+position = Vector2(454, 865)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_vl0m7")
+
+[node name="Rato" type="Sprite2D" parent="."]
+position = Vector2(409, 908)
+texture = ExtResource("11_0rsd4")
+
+[node name="BerlimSCremeR" type="Sprite2D" parent="."]
+position = Vector2(365, 865)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_p0xb5")
