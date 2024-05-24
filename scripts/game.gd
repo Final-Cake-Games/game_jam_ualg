@@ -12,6 +12,8 @@ class_name Game extends Node2D
 @export var time_to_max_seconds : float = 60
 @export var chunk : MapSquare
 
+@export var game_over : PackedScene
+
 var camera_move_speed : float
 var player_points : int = 0
 var sfx_cd : float
@@ -41,7 +43,7 @@ func move_camera(delta : float) -> void:
 
 func _on_player_block_body_entered(body : Player):
 	print("game over!")
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_packed(game_over)
 
 func add_point():
 	player_points+=1

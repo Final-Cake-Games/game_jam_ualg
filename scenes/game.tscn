@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmar6qisp2br0"]
+[gd_scene load_steps=9 format=3 uid="uid://bmar6qisp2br0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_gljfi"]
 [ext_resource type="PackedScene" uid="uid://d3t0tha7ecr3r" path="res://scenes/map_square.tscn" id="2_j5ln5"]
+[ext_resource type="PackedScene" uid="uid://cv118ctl3rgdn" path="res://scenes/game_over.tscn" id="2_ktk7c"]
 [ext_resource type="PackedScene" uid="uid://bridrvflasth4" path="res://scenes/player.tscn" id="3_8b7rk"]
 [ext_resource type="PackedScene" uid="uid://c43jsqurnr2ea" path="res://scenes/hud.tscn" id="4_e7lcb"]
 [ext_resource type="Texture2D" uid="uid://yeaad47ik0et" path="res://tmp/Sand_Title.png" id="5_dvgax"]
@@ -14,6 +15,7 @@ size = Vector2(44, 1583)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_gljfi")
+game_over = ExtResource("2_ktk7c")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.1

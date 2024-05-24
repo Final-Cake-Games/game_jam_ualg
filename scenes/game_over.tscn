@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv118ctl3rgdn"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_4pdnv"]
+[ext_resource type="Texture2D" uid="uid://c3e7x6y5yc8vh" path="res://tmp/gameover.png" id="1_o3pgb"]
+[ext_resource type="PackedScene" uid="uid://bmar6qisp2br0" path="res://scenes/game.tscn" id="2_nw3du"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pdnv")
+game = ExtResource("2_nw3du")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Gameover" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(274, 481)
+texture = ExtResource("1_o3pgb")
