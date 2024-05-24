@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://baudr5ehuhsv3"]
+
+[ext_resource type="PackedScene" uid="uid://df5070ykfd0ft" path="res://scenes/base_scenes/moving_obstacle.tscn" id="1_p2b2o"]
+[ext_resource type="Texture2D" uid="uid://dhurcfkkudkrl" path="res://assets/praia_assets/shovel.png" id="2_fpenk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whqn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fpenk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0wfi"]
+radius = 12.0
+height = 100.0
+
+[sub_resource type="Animation" id="Animation_nyeor"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_10dpj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfq6p"]
+_data = {
+"RESET": SubResource("Animation_10dpj"),
+"new_animation": SubResource("Animation_nyeor")
+}
+
+[node name="Remo" instance=ExtResource("1_p2b2o")]
+z_index = 5
+rotation = 3.14159
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_whqn5")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_d0wfi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_mfq6p")
+}
+autoplay = "new_animation"
