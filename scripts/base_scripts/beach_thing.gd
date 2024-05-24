@@ -13,8 +13,3 @@ func _process(delta):
 func _physics_process(delta):
 	pass
 
-func knock_back(dir : Vector2, str : float):
-	#velocity = dir * str
-	#await get_tree().create_timer(knock_back_time).timeout
-	#velocity = velocity.move_toward(Vector2.ZERO, str / 4)	
-	pass

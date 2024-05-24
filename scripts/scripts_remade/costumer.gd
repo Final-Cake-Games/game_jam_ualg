@@ -8,6 +8,7 @@ signal no_order
 @onready var request_bubble : AnimatedSprite2D = $RequestBubble
 @onready var progress_bar : ProgressBar = $ProgressBar
 @onready var sprite_2d : Sprite2D = $Sprite2D
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 @export var turma_textures : Array[CompressedTexture2D]
 @export var min_wait_time : int = 3
@@ -51,18 +52,23 @@ func _on_order_made():
 	waiting_for_order = true
 
 func _on_order_failed():
+	animation_player.play("react")
 	progress_bar.visible = false
 	request_bubble.play("mad")
 
 func _on_order_success():
+	animation_player.play("react")
 	waiting_for_order = false
 	progress_bar.visible = false
 	request_bubble.play("happy")
 
-func _on_berlim_detector_body_entered(body : BolaBerlim):
+func _on_berlim_detector_body_entered(body : BolaBerlim):	
 	if waiting_for_order:
 		if body.type == order_choice:
 			order_success.emit()
+			
+			var player : Player = get_tree().get_first_node_in_group("player")
+			player.boost()
 		else:
 			order_failed.emit()
 

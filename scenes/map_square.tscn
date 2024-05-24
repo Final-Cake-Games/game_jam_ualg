@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3t0tha7ecr3r"]
+[gd_scene load_steps=10 format=3 uid="uid://d3t0tha7ecr3r"]
 
 [ext_resource type="Script" path="res://scripts/map_square.gd" id="1_7r5aj"]
 [ext_resource type="Texture2D" uid="uid://28l0ovsp6xwm" path="res://tmp/0000.png" id="2_qw5qe"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://eu0grpop7pr7" path="res://scenes/static_obstacles/bucket.tscn" id="5_46xo5"]
 [ext_resource type="PackedScene" uid="uid://dqdittydu3sxk" path="res://scenes/static_obstacles/tube.tscn" id="6_rg0w1"]
 [ext_resource type="PackedScene" uid="uid://dltbv1mvyk08f" path="res://scenes/scenes_remade/costumer.tscn" id="7_5h6ey"]
-[ext_resource type="PackedScene" uid="uid://baudr5ehuhsv3" path="res://scenes/remo.tscn" id="7_22c6o"]
+[ext_resource type="PackedScene" uid="uid://dxjj3s1eygntw" path="res://scenes/moving_things/geleira.tscn" id="7_dgy5k"]
+[ext_resource type="PackedScene" uid="uid://bjkuhggiopwa1" path="res://scenes/moving_things/Rema.tscn" id="8_qnmmc"]
 
 [node name="MapSquare" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_7r5aj")
-beach_things_array = Array[PackedScene]([ExtResource("4_b7vsi"), ExtResource("4_b0lt6"), ExtResource("5_46xo5"), ExtResource("6_rg0w1"), ExtResource("7_22c6o"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey")])
+beach_things_array = Array[PackedScene]([ExtResource("4_b7vsi"), ExtResource("4_b0lt6"), ExtResource("5_46xo5"), ExtResource("6_rg0w1"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_dgy5k"), ExtResource("8_qnmmc")])
 
 [node name="Positions" type="Node2D" parent="."]
 

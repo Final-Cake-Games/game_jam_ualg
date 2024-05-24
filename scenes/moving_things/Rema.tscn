@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkuhggiopwa1"]
+
+[ext_resource type="PackedScene" uid="uid://b0wws5vjv8scd" path="res://scenes/base_scenes/moving_beach_thing.tscn" id="1_1ue8e"]
+[ext_resource type="Texture2D" uid="uid://dhurcfkkudkrl" path="res://assets/praia_assets/shovel.png" id="2_3ux1t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arhx8"]
+radius = 3.0
+height = 72.0
+
+[node name="Rema" instance=ExtResource("1_1ue8e")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_3ux1t")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.0
+shape = SubResource("CapsuleShape2D_arhx8")
