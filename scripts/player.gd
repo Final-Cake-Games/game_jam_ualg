@@ -78,4 +78,3 @@ func _on_slowed():
 	max_speed = punish_speed
 	await get_tree().create_timer(punish_time).timeout
 	max_speed = 200
-	print(max_speed)
