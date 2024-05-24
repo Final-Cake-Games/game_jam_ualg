@@ -9,7 +9,7 @@ func _ready():
 	
 	var move_dir : Vector2 = (player.global_position - global_position).normalized()
 	
-	apply_central_impulse(move_dir * 750)
+	apply_central_impulse(move_dir * 500)
 	
 
 

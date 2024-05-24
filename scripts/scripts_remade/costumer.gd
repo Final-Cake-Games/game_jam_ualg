@@ -48,6 +48,7 @@ func _on_no_order():
 		progress_bar.visible = false
 
 func _on_order_made():
+	progress_bar.visible = true
 	request_bubble.play(order_choice)
 	waiting_for_order = true
 

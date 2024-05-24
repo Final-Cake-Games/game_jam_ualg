@@ -8,23 +8,23 @@
 [ext_resource type="Texture2D" uid="uid://btdupcgshmv8t" path="res://assets/caras_turma/Ana.png" id="4_fh31d"]
 [ext_resource type="Texture2D" uid="uid://ogtxff5k21lf" path="res://tmp/F.3.png" id="5_21xkx"]
 [ext_resource type="Texture2D" uid="uid://ba6c4uic2qt0i" path="res://assets/caras_turma/flavio.png" id="5_oho7k"]
+[ext_resource type="Texture2D" uid="uid://csuv4tqpc8x3h" path="res://assets/caras_turma/Eusebio.png" id="5_x77gr"]
 [ext_resource type="Texture2D" uid="uid://djuuv0f4i3cyp" path="res://tmp/F.4.png" id="6_5r7xv"]
+[ext_resource type="Texture2D" uid="uid://4xrp8v8eb3gu" path="res://assets/caras_turma/Farroba.png" id="6_nkxqu"]
 [ext_resource type="Texture2D" uid="uid://cp08fcxtogsm0" path="res://assets/caras_turma/Joao_Farroba.png" id="6_xeoml"]
 [ext_resource type="Texture2D" uid="uid://dvp5ddutic7g5" path="res://tmp/F.5.png" id="7_3nshm"]
 [ext_resource type="Texture2D" uid="uid://bfadu4naf0y3o" path="res://assets/caras_turma/Gomez.png" id="7_6kdhm"]
-[ext_resource type="Texture2D" uid="uid://bk2lxitb7ga2x" path="res://assets/caras_turma/oGay.png" id="8_gnjfr"]
 [ext_resource type="Texture2D" uid="uid://bhiimb7j4yrb" path="res://tmp/Berlim C_Creme_L.png" id="8_yd47i"]
-[ext_resource type="Texture2D" uid="uid://c6b081ls55fym" path="res://assets/caras_turma/prog_jaques.png" id="9_3i53o"]
 [ext_resource type="Texture2D" uid="uid://byqk8vcxqlrce" path="res://tmp/Bubble_Happy_L.png" id="9_sh0db"]
 [ext_resource type="Texture2D" uid="uid://gscv0ahxgsxr" path="res://tmp/Bubble_Angry_L.png" id="10_53kae"]
-[ext_resource type="Texture2D" uid="uid://cb8uaexv782v8" path="res://assets/caras_turma/Ricardo.png" id="10_g7jas"]
+[ext_resource type="Texture2D" uid="uid://durw7sa7u4xjf" path="res://assets/caras_turma/prof_jaques.png" id="10_ofrwk"]
 [ext_resource type="Texture2D" uid="uid://bkxx54t7fq8qy" path="res://tmp/Berlim S_Creme_L.png" id="11_8s0xp"]
-[ext_resource type="Texture2D" uid="uid://dnilpyonb1kkc" path="res://assets/caras_turma/Ricardo_2.png" id="11_n4et0"]
+[ext_resource type="Texture2D" uid="uid://d2f2v7dofrn8j" path="res://assets/caras_turma/Ricardo_01.png" id="11_nhqvf"]
 [ext_resource type="Texture2D" uid="uid://8l4h0n7h3pb0" path="res://assets/caras_turma/Ruben.png" id="12_inx5m"]
+[ext_resource type="Texture2D" uid="uid://cr4jecwismvi5" path="res://assets/caras_turma/Ricardo_02.png" id="12_l8el0"]
 [ext_resource type="Texture2D" uid="uid://d2cknaebj20j2" path="res://tmp/waiting-png-9.png" id="13_d210i"]
 [ext_resource type="Texture2D" uid="uid://c4h6xilqtxxwa" path="res://assets/caras_turma/tiago.png" id="13_q7uw7"]
 [ext_resource type="Texture2D" uid="uid://b5ka5pxo5ruu5" path="res://assets/caras_turma/Tomas.png" id="14_hwnai"]
-[ext_resource type="Texture2D" uid="uid://dtew17hn7y08n" path="res://assets/caras_turma/Vitor.png" id="15_5icj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyl68"]
 radius = 57.1402
@@ -55,7 +55,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"creme",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -102,7 +102,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"screme",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="Animation" id="Animation_loqkc"]
@@ -149,13 +149,13 @@ collision_mask = 29
 lock_rotation = true
 linear_damp = 50.0
 script = ExtResource("2_xy4ne")
-turma_textures = Array[CompressedTexture2D]([ExtResource("3_a1ynh"), ExtResource("4_fh31d"), ExtResource("5_oho7k"), ExtResource("6_xeoml"), ExtResource("7_6kdhm"), ExtResource("8_gnjfr"), ExtResource("9_3i53o"), ExtResource("10_g7jas"), ExtResource("11_n4et0"), ExtResource("12_inx5m"), ExtResource("13_q7uw7"), ExtResource("14_hwnai"), ExtResource("15_5icj3")])
+turma_textures = Array[CompressedTexture2D]([ExtResource("3_a1ynh"), ExtResource("4_fh31d"), ExtResource("5_x77gr"), ExtResource("6_nkxqu"), ExtResource("5_oho7k"), ExtResource("7_6kdhm"), ExtResource("6_xeoml"), ExtResource("10_ofrwk"), ExtResource("11_nhqvf"), ExtResource("12_l8el0"), ExtResource("12_inx5m"), ExtResource("13_q7uw7"), ExtResource("14_hwnai")])
 min_wait_time = 3
 max_wait_time = 6
 eat_sfx = null
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_wyl68")
@@ -175,10 +175,11 @@ z_index = 10
 position = Vector2(38, -63)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_76ehv")
-animation = &"new_animation"
+animation = &"screme"
 autoplay = "new_animation"
 
 [node name="ProgressBar" type="ProgressBar" parent="." index="5"]
+visible = false
 self_modulate = Color(0.0786705, 0.581014, 0.893529, 1)
 z_index = 10
 offset_left = -45.0

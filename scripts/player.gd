@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 signal slowed
 
 @onready var progress_bar : ProgressBar = $ProgressBar
+@onready var sprite_2d : AnimatedSprite2D = $Sprite2D
+
 
 @export var max_speed : float = 200
 @export var accel : float = 50
@@ -25,9 +27,12 @@ func _ready():
 	bolas_holder = get_tree().get_first_node_in_group("bolas")
 
 func _physics_process(delta):
-	if (get_last_slide_collision() != null and 
-	!get_last_slide_collision().get_collider().name.begins_with("Boun")):
-		slowed.emit()
+	if (get_last_slide_collision() != null):
+		var last_collision = get_last_slide_collision()
+		var last_collision_name : String = last_collision.get_collider().name
+		
+		if !last_collision_name.begins_with("Boun"):
+			slowed.emit()
 		
 	mouse_pos = get_global_mouse_position()
 	look_at(mouse_pos.move_toward(get_global_mouse_position(), 5)) # Make smooth
@@ -41,11 +46,17 @@ func _physics_process(delta):
 		throw_bola("screme")
 		curr_throw = 0
 		progress_bar.visible = false
+		sprite_2d.play("throw")
+		await sprite_2d.animation_finished
+		sprite_2d.play("default")
 		
 	if Input.is_action_just_released("throw_2"):
 		throw_bola("creme")
 		curr_throw = 0
 		progress_bar.visible = false
+		sprite_2d.play("throw")
+		await sprite_2d.animation_finished
+		sprite_2d.play("default")
 	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -75,6 +86,7 @@ func throw_bola( type : String):
 		new_bola.apply_impulse(direction * curr_throw)
 	
 func _on_slowed():
+	print("slowed")
 	var store_speed = max_speed
 	max_speed = punish_speed
 	await get_tree().create_timer(punish_time).timeout

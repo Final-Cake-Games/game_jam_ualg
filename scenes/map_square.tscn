@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3t0tha7ecr3r"]
+[gd_scene load_steps=11 format=3 uid="uid://d3t0tha7ecr3r"]
 
 [ext_resource type="Script" path="res://scripts/map_square.gd" id="1_7r5aj"]
-[ext_resource type="Texture2D" uid="uid://28l0ovsp6xwm" path="res://tmp/0000.png" id="2_qw5qe"]
 [ext_resource type="PackedScene" uid="uid://ei7iwoxhwb0w" path="res://scenes/static_obstacles/sombrinha.tscn" id="4_b0lt6"]
 [ext_resource type="PackedScene" uid="uid://bp035jiehb3xy" path="res://scenes/static_obstacles/cadeira.tscn" id="4_b7vsi"]
 [ext_resource type="PackedScene" uid="uid://eu0grpop7pr7" path="res://scenes/static_obstacles/bucket.tscn" id="5_46xo5"]
@@ -9,11 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dltbv1mvyk08f" path="res://scenes/scenes_remade/costumer.tscn" id="7_5h6ey"]
 [ext_resource type="PackedScene" uid="uid://dxjj3s1eygntw" path="res://scenes/moving_things/geleira.tscn" id="7_dgy5k"]
 [ext_resource type="PackedScene" uid="uid://bjkuhggiopwa1" path="res://scenes/moving_things/Rema.tscn" id="8_qnmmc"]
+[ext_resource type="PackedScene" uid="uid://wtyx7a2tk5qd" path="res://scenes/moving_things/Chair.tscn" id="9_b1gdk"]
+[ext_resource type="Texture2D" uid="uid://c7gn5f7lxof3h" path="res://assets/REAL_SAND/REAL_SAND.png" id="10_dk4a3"]
 
 [node name="MapSquare" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_7r5aj")
-beach_things_array = Array[PackedScene]([ExtResource("4_b7vsi"), ExtResource("4_b0lt6"), ExtResource("5_46xo5"), ExtResource("6_rg0w1"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_dgy5k"), ExtResource("8_qnmmc")])
+beach_things_array = Array[PackedScene]([ExtResource("4_b7vsi"), ExtResource("4_b0lt6"), ExtResource("5_46xo5"), ExtResource("6_rg0w1"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_5h6ey"), ExtResource("7_dgy5k"), ExtResource("8_qnmmc"), ExtResource("9_b1gdk"), ExtResource("7_5h6ey")])
 
 [node name="Positions" type="Node2D" parent="."]
 
@@ -41,9 +42,18 @@ position = Vector2(172, -872)
 [node name="Marker2D8" type="Marker2D" parent="Positions"]
 position = Vector2(160, -204)
 
+[node name="Marker2D9" type="Marker2D" parent="Positions"]
+position = Vector2(33, -345)
+
+[node name="Marker2D10" type="Marker2D" parent="Positions"]
+position = Vector2(22, -632)
+
+[node name="Marker2D11" type="Marker2D" parent="Positions"]
+position = Vector2(-21, -808)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -480)
-texture = ExtResource("2_qw5qe")
+texture = ExtResource("10_dk4a3")
 
 [node name="ScreenStatusNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-260, -950)
