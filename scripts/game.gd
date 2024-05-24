@@ -18,3 +18,8 @@ func _physics_process(delta):
 	
 func move_camera(delta : float) -> void:
 	camera_2d.position.y -= camera_move_speed * delta
+
+
+func _on_player_block_body_entered(body : Player):
+	print("game over!")
+	get_tree().reload_current_scene()

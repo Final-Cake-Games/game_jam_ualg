@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bridrvflasth4" path="res://scenes/player.tscn" id="3_8b7rk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cut0w"]
-size = Vector2(1094, 47)
+size = Vector2(550, 114.5)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_gljfi")
@@ -19,14 +19,16 @@ camera_move_speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="PlayerBlock" type="StaticBody2D" parent="Camera2D"]
+[node name="PlayerDeath" type="Area2D" parent="Camera2D"]
 z_index = 2
-position = Vector2(1, 491)
+position = Vector2(1, 564)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/PlayerBlock"]
-position = Vector2(0, 13.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/PlayerDeath"]
+position = Vector2(0, 63.75)
 shape = SubResource("RectangleShape2D_cut0w")
 
 [node name="Player" parent="." instance=ExtResource("3_8b7rk")]
 position = Vector2(0, 55)
+
+[connection signal="body_entered" from="Camera2D/PlayerDeath" to="." method="_on_player_block_body_entered"]
